@@ -1184,10 +1184,10 @@ input:focus {
 #page-content-contact {
   padding: 50px 0;
   margin-top: 150px;
-  min-height: 580px;
+  min-height: 480px;
   @include respondTo(phone,tablet) {
     margin-top: 120px;
-    min-height: 480px;
+    min-height: 200px;
   }
 }
 
