@@ -23,14 +23,7 @@ body {
 html,
 body {
   margin: 0;
-  height: 100%;
-}
-
-.wrapper {
-  height: 100%;
-  overflow: hidden;
-  margin-bottom: -50px;
-  // padding-bottom: 100px;
+  // height: 100%;
 }
 
 .row {
@@ -738,7 +731,7 @@ input:focus {
 
 #portfolio {
   // padding-bottom: 30px;
-  margin-top: 30px;
+  margin: 40px 0;
 }
 
 #portfolio.full-screen {
