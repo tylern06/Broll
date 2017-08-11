@@ -1,8 +1,14 @@
 @import "mixin_responsive";
 @import "variables";
 @import "mixins";
-
-/* Base CSS */
+@import "typography";
+@import "buttons";
+@import "tabs-accordions";
+@import "labels-badges-alerts";
+@import "listgroups-panels";
+@import "progress-bars";
+@import "tables";
+@import "./partials/**";
 
 body {
   color: $text-color;
@@ -16,11 +22,16 @@ body {
 
 html,
 body {
-  // height: 100%;
   margin: 0;
+  height: 100%;
 }
 
-@import "typography";
+.wrapper {
+  height: 100%;
+  overflow: hidden;
+  margin-bottom: -50px;
+  // padding-bottom: 100px;
+}
 
 .row {
   margin-right: 0;
@@ -264,13 +275,6 @@ input:focus {
   color: $white;
   background: $primary-transparent;
 }
-
-@import "buttons";
-@import "tabs-accordions";
-@import "labels-badges-alerts";
-@import "listgroups-panels";
-@import "progress-bars";
-@import "tables";
 
 /* End Base CSS */
 
@@ -697,7 +701,7 @@ input:focus {
     color: white;
     font-size: 34px;
     font-style: italic;
-    font-family: $font-medium-content;
+    font-family: $font-medium-content-italic;
     line-height: 1.5;
     border: none;
     @include respondTo(phone) {
@@ -733,7 +737,8 @@ input:focus {
 /* Portfolio */
 
 #portfolio {
-  padding-bottom: 50px;
+  // padding-bottom: 30px;
+  margin-top: 30px;
 }
 
 #portfolio.full-screen {
@@ -1874,41 +1879,6 @@ input:focus {
 
 /* Content */
 
-/* Footers */
-
-footer {
-  background: $body-bg;
-  // border-top: 1px solid $light-grey;
-  padding: 30px 0;
-  height: 80px !important;
-}
-
-footer.dark {
-  border-top: 1px solid $black;
-}
-
-.footer-info {
-  padding: 0 15px;
-}
-
-footer p {
-  // color: $title-color;
-  color: white;
-  font-size: 14px;
-  font-weight: $bold;
-  margin-bottom: 0;
-}
-
-footer.dark p {
-  color: $white;
-}
-
-footer .social a {
-  font-size: 14px;
-}
-
-/* End Footers */
-
 /* Scroll to Top */
 
 .scroll-to-top {
@@ -2002,7 +1972,7 @@ footer .social a {
   height: 50px;
   display: inline-block;
   box-sizing: border-box;
-  border-top: solid 4px $primary;
+  border-top: solid 4px black;
   border-right: solid 4px transparent;
   border-bottom: solid 4px transparent;
   border-left: solid 4px transparent;
@@ -2203,6 +2173,60 @@ footer .social a {
 .mobile-header {
   display: none;
 }
+.project {
+  text-align: center;
+}
+.links {
+  display: inline-block;
+  // text-align: center;
+  h1 {
+  }
+
+  span {
+    font-family: $font-medium-content-italic;
+    color: white;
+    font-size: 26px;
+    @include respondTo(phone) {
+      font-size: 16px;
+    }
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+
+  span:before,
+  span:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    top: 50%;
+    margin-top: -0.5px;
+    background: #fff;
+  }
+
+  span:before {
+    left: -2.5px;
+  }
+  span:after {
+    right: 2.5px;
+    background: #fff;
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  span:hover:before {
+    background: #fff;
+    width: 100%;
+    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  span:hover:after {
+    background: transparent;
+    width: 100%;
+    transition: 0s;
+  }
+}
+
 //responsive
 @include respondTo(phone) {
   .navbar-nav > li {
@@ -2215,6 +2239,7 @@ footer .social a {
     display: block;
     img {
       height: auto;
+      max-height: 600px;
       width: 100%;
     }
   }

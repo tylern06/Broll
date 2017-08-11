@@ -1,10 +1,16 @@
 /* Typography */
 @font-face {
+  font-family: 'medium-content-italic';
+  src: url('../fonts/medium-content-italic-font.woff');
+  font-weight: 400;
+}
+@font-face {
   font-family: 'medium-content';
-  src: url('../fonts/medium-content-serif-font.woff');
+  src: url('../fonts/medium-content-font.woff');
   font-weight: 400;
 }
 
+$font-medium-content-italic: 'medium-content-italic';
 $font-medium-content: 'medium-content';
 
 h1,
